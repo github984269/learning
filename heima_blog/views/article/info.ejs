@@ -1,0 +1,27 @@
+<!-- 导入头部的代码 -->
+<%- include("../layout/header.ejs")  %>
+
+<div class="container">
+    <div class="form-group">
+        <h2>
+            <%= article.title %>
+            <!-- 判断当前用户是否登录，并且文章的作者id和用户id是否一致 -->
+            <% if(islogin && user.id == article.authorid) {%>
+            <a href="/article/showedit/<%= article.id %>" class=" btn btn-primary navbar-right">编辑</a>
+            <% }%>
+
+
+        </h2>
+    </div>
+    <hr>
+    <br>
+    <div class="content">
+        <%- article.content %>
+    </div>
+    <br>
+    <hr>
+
+</div>
+
+<!-- 导入底部 -->
+<%- include("../layout/footer.ejs")  %>
