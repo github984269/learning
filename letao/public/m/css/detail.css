@@ -1,0 +1,38 @@
+.mui-slider img {
+  vertical-align: top;
+}
+.product-title {
+  padding: 10px 5px;
+}
+.price {
+  font-size: 14px;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+}
+.price .now {
+  font-size: 18px;
+  color: red;
+  margin-right: 10px;
+}
+.price .old {
+  color: gray;
+  text-decoration: line-through;
+}
+.size {
+  padding: 10px;
+  font-size: 14px;
+}
+.size span {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  margin-right: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+}
+.size .active {
+  background-color: orangered;
+}

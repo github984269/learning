@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="assets/mui/css/mui.min.css">
+    <link rel="stylesheet" href="css/base.css">
+    <script src="assets/zepto/zepto.min.js"></script>
+    <script src="assets/artTemplate/template-native.js"></script>
+    <script src="assets/mui/js/mui.min.js"></script>
+    <link rel="stylesheet" href="./assets/fontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/detail.css">
+    <script src="js/public.js"></script>
+    <script src="./js/detail.js"></script>
+
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav my-header">
+        <h1 class="mui-title">乐淘云购</h1>
+    </header>
+    <nav class="mui-bar mui-bar-tab my-footer">
+        <a class="mui-tab-item mui-active" href="index.html">
+            <span class="mui-icon mui-icon-home"></span>
+            <span class="mui-tab-label">首页</span>
+        </a>
+        <a class="mui-tab-item" href="category.html">
+            <span class="mui-icon mui-icon-bars"></span>
+            <span class="mui-tab-label">分类</span>
+        </a>
+        <a class="mui-tab-item" href="cart.html">
+            <span class="mui-icon fa fa-shopping-cart"></span>
+            <span class="mui-tab-label">购物车</span>
+        </a>
+        <a class="mui-tab-item" href="user.html">
+            <span class="mui-icon mui-icon-person"></span>
+            <span class="mui-tab-label">会员中心</span>
+        </a>
+    </nav>
+    <div class="mui-content pro-detail">
+        <!-- 坑 -->
+    </div>
+    <script type="text/template" id="detailTpl">
+        <div class="mui-slider">
+                <div class="mui-slider-group">
+                    <%　for(var i =0; i < pic.length; i ++) { %>
+                    <div class="mui-slider-item"><a href="#"><img src="<%=pic[i].picAddr %>" /></a></div>
+                    <% } %>
+                </div>
+            </div>
+            <div class="product-title">
+                    <%=proName %>
+            </div>
+            <div class="price">
+                价格：<sapn class="now">¥<%=oldPrice %></sapn>
+                <sapn class="old">¥<%=price %></sapn>
+            </div>
+            <div class="size">
+                尺码：
+                <% var sizeArr = size.split("-"); %>
+                <% for(var i = sizeArr[0]; i <= sizeArr[1]; i ++) { %>
+                    <% if(i == 41) { %>
+                        <span class="active"><%= i %></span>
+                    <% } else { %>
+                        <span><%= i %></span>
+                    <% } %>              
+                <% } %>
+            </div>
+            <div class="count mui-clearfix" style="" >
+                <div class="num  mui-pull-left" style="margin-right: 10px;line-height: 28px;">数量：</div>
+                <div class="mui-numbox  mui-pull-left" data-numbox-step='1' data-numbox-min='1' data-numbox-max='<%=num %>'
+                style="height: 28px;padding-left: 28px;padding-right:28px;width: 86px;">
+                    <button class="mui-btn mui-numbox-btn-minus" type="button" style="height: 28px;width: 28px;">-</button>
+                    <input value="1" class="mui-numbox-input number" type="number"  style="height: 28px;width: 28px!important;padding-left:0!important;padding-right: 0!important;"/>
+                    <button class="mui-btn mui-numbox-btn-plus" type="button"  style="height: 28px;width: 28px;">+</button>
+                </div>
+                <div class="sheng mui-pull-left" style="margin-left: 10px;line-height: 28px;">剩余 <span id="jian"><%=num %></span>件</div>
+            </div>
+            <div class="cart mui-clearfix" style="padding: 10px;margin-top: 10px;">
+                <span style="display: inline-block;width: 50%;background-color: orangered;float: left;
+                height: 35px;text-align: center;line-height: 35px;border: 1px solid #ccc">查看购物车</span>
+                <span id="addCar" style="display: inline-block;width: 50%;background-color: red;float: left;
+                height: 35px;text-align: center;line-height: 35px;border: 1px solid #ccc">加入购物车</span>
+            </div>
+    </script>
+</body>
+
+</html>
